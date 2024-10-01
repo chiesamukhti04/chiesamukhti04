@@ -1,0 +1,351 @@
+<html>
+
+<head>
+    <title>Eriko Chiesa Mukhti</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css">
+    <link rel="stylesheet" href="./sources/cosel.css">
+
+
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        function App() {
+            const [isOpen, setIsOpen] = React.useState(false);
+            const [darkMode, setDarkMode] = React.useState(true);
+
+            const scrollToSection = (sectionId) => {
+                document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth', block: 'start' });
+            };
+
+            const toggleDarkMode = () => {
+                setDarkMode(!darkMode);
+                document.body.style.backgroundColor = darkMode ? '#ffffff' : '#1a1a1a';
+                document.body.style.color = darkMode ? '#000000' : '#ffffff';
+            };
+
+            React.useEffect(() => {
+                const handleScroll = () => {
+                    const elements = document.querySelectorAll('.fade-in');
+                    elements.forEach(element => {
+                        const rect = element.getBoundingClientRect();
+                        if (rect.top < window.innerHeight) {
+                            element.classList.add('visible');
+                        }
+                    });
+                };
+
+                window.addEventListener('scroll', handleScroll);
+                handleScroll(); // Initial check
+
+                return () => window.removeEventListener('scroll', handleScroll);
+            }, []);
+
+            return (
+                <div className="min-h-screen flex flex-col items-center">
+                    <header className="fixed-navbar w-full flex justify-between items-center p-6">
+                        <div className="flex items-center upper-logo">
+                            <img src="logo.png" alt="Profile" className="rounded-full mr-3" />
+                            <span className="text-xl font-bold">Chiesa Portfolio's</span>
+                        </div>
+                        <nav className="hidden md:flex space-x-6">
+                            <a href="#" className="hover:text-gray-400" onClick={() => scrollToSection('home')}>Home</a>
+                            <a href="#" className="hover:text-gray-400" onClick={() => scrollToSection('about')}>About</a>
+                            <a href="#" className="hover:text-gray-400" onClick={() => scrollToSection('experience')}>Experience</a>
+                            <a href="#" className="hover:text-gray-400" onClick={() => scrollToSection('skills')}>Skills</a>
+                            <a href="#" className="hover:text-gray-400" onClick={() => scrollToSection('achievement')}>Achievement</a>
+                            <a href="#" className="hover:text-gray-400" onClick={() => scrollToSection('certificates')}>Certificates</a>
+                        </nav>
+                        <button className="bg-pink-600 text-white px-4 py-2 rounded hidden md:block">Contact ME</button>
+                        <button className="md:hidden text-white" onClick={() => setIsOpen(!isOpen)}>
+                            <i className="fas fa-bars"></i>
+                        </button>
+                    </header>
+                    {isOpen && (
+                        <nav className="md:hidden flex flex-col items-center space-y-4 mb-4">
+                            <a href="#" className="hover:text-gray-400" onClick={() => scrollToSection('home')}>Home</a>
+                            <a href="#" className="hover:text-gray-400" onClick={() => scrollToSection('about')}>About</a>
+                            <a href="#" className="hover:text-gray-400" onClick={() => scrollToSection('experience')}>Experience</a>
+                            <a href="#" className="hover:text-gray-400" onClick={() => scrollToSection('skills')}>Skills</a>
+                            <a href="#" className="hover:text-gray-400" onClick={() => scrollToSection('achievement')}>Achievement</a>
+                            <a href="#" className="hover:text-gray-400" onClick={() => scrollToSection('certificates')}>Certificates</a>
+                            <button className="bg-pink-600 text-white px-4 py-2 rounded">Contact Me</button>
+                        </nav>
+                    )}
+                    <div id="home" className="section flex flex-col md:flex-row items-center justify-center">
+                        <div className="md:w-1/2 flex justify-center mb-8 md:mb-0">
+                            <img src="./poto/chiesamukhti98.png" alt="Professional coder holding a coffee cup" className="rounded-lg" />
+                        </div>
+                        <div className="text-center md:text-left md:w-1/2">
+                            <p className="text-gray-400 mb-2">WELCOME TO MY WORLD</p>
+                            <h1 className="text-5xl font-bold mb-4">
+                                Hi, I'm <span className="highlight">Eriko Chiesa Mukhti, S.E.</span><br />
+                                <span className="text-3xl">a Head of Finance.</span>
+                            </h1>
+                            <p className="text-gray-400 max-w-xl mb-8">
+                                I have experience in financial management and planning, and I am proficient in operating various types of software. Integrity is always my top priority in every task I undertake.
+                            </p>
+                            <div className="flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-16">
+                                <div className="flex flex-col items-center">
+                                    <p className="mb-4">FIND WITH ME</p>
+                                    <div className="flex space-x-4">
+                                        <a href="https://facebook.com/erikochiesamukhti" className="text-2xl hover:text-gray-400"><i className="fab fa-facebook"></i></a>
+                                        <a href="https://x.com/chiesamukhti04" className="text-2xl hover:text-gray-400"><i className="fab fa-twitter"></i></a>
+                                        <a href="https://instagram.com/chiesamukhti04" className="text-2xl hover:text-gray-400"><i className="fab fa-instagram"></i></a>
+                                        <a href="https://linked.in/chiesamukhti04" className="text-2xl hover:text-gray-400"><i className="fab fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div className="flex flex-col items-center">
+                                    <p className="mb-4">BEST SKILL ON</p>
+                                    <div className="flex space-x-4">
+                                        <a href="https://" className="text-2xl hover:text-gray-400"><i className="fab fa-microsoft"></i></a>
+                                        <a href="https://" className="text-2xl hover:text-gray-400"><i className="fab fa-terminal"></i></a>
+                                        <a href="https://" className="text-2xl hover:text-gray-400"><i className="fab fa-spinner"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="section about-section">
+                        <main className="flex flex-col items-center justify-center h-screen">
+                            <h1 className="text-4xl font-bold mb-8 fade-in">About Me</h1>
+                            <div className="text-gray-400 w-full max-w-2xl fade-in">
+                                <div className="flex justify-between mb-4 fade-in">
+                                    <p className="text-right w-1/2 pr-4"><strong>Name:</strong></p>
+                                    <p className="text-left w-1/2 pl-4">Eriko Chiesa Mukhti</p>
+                                </div>
+                                <hr className="border-gray-600 mb-4 fade-in" />
+                                <div className="flex justify-between mb-4  fade-in">
+                                    <p className="text-right w-1/2 pr-4"><strong>Place and Date of Birth:</strong></p>
+                                    <p className="text-left w-1/2 pl-4">Cilacap, May 4, 2001</p>
+                                </div>
+                                <hr className="border-gray-600 mb-4  fade-in" />
+                                <div className="flex justify-between mb-4 fade-in">
+                                    <p className="text-right w-1/2 pr-4"><strong>Gender:</strong></p>
+                                    <p className="text-left w-1/2 pl-4">Male</p>
+                                </div>
+                                <hr className="border-gray-600 mb-4 fade-in" />
+                                <div className="flex justify-between mb-4 fade-in">
+                                    <p className="text-right w-1/2 pr-4"><strong>Religion:</strong></p>
+                                    <p className="text-left w-1/2 pl-4">Islam</p>
+                                </div>
+                                <hr className="border-gray-600 mb-4 fade-in" />
+                                <div className="flex justify-between mb-4 fade-in">
+                                    <p className="text-right w-1/2 pr-4"><strong>Last Education:</strong></p>
+                                    <p className="text-left w-1/2 pl-4">Master's Degree in Islamic Banking</p>
+                                </div>
+                                <hr className="border-gray-600 mb-4 fade-in" />
+                                <div className="flex justify-between mb-4 fade-in">
+                                    <p className="text-right w-1/2 pr-4"><strong>Nationality:</strong></p>
+                                    <p className="text-left w-1/2 pl-4">Indonesia</p>
+                                </div>
+                            </div>
+                        </main>
+                    </div>
+                    <div id="experience" className="section experience-section">
+                        <div className="text-center">
+                            <h2 className="text-4xl font-bold mb-8">Experience</h2>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                <div className="bg-gray-800 p-6 rounded-lg">
+                                    <h3 className="text-2xl font-bold mb-2">Marketing Admin</h3>
+                                    <p className="text-gray-400">PT Bank Syariah Indonesia Tbk.</p>
+                                    <p className="text-gray-400">3 Month</p>
+                                    <p className="text-gray-400 mt-4">Credits Analysis.</p>
+                                </div>
+                                <div className="bg-gray-800 p-6 rounded-lg">
+                                    <h3 className="text-2xl font-bold mb-2">Maintenance Staff</h3>
+                                    <p className="text-gray-400">PT Agung Citra Transformation</p>
+                                    <p className="text-gray-400">3 Month</p>
+                                    <p className="text-gray-400 mt-4">manage work continuity and maintenance.</p>
+                                </div>
+                                <div className="bg-gray-800 p-6 rounded-lg">
+                                    <h3 className="text-2xl font-bold mb-2">Surveyor</h3>
+                                    <p className="text-gray-400">Badan Pusat Statistic</p>
+                                    <p className="text-gray-400">Freelance</p>
+                                    <p className="text-gray-400 mt-4">Collecting data.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="skills" className="section skills-section">
+                        <div className="skills-container">
+                            <div className="text-center">
+                                <h2 className="text-4xl font-bold mb-4">Skills</h2>
+                            </div>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Soft Skills</th>
+                                        <th>Hard Skills</th>
+                                        <th>Software</th>
+                                        <th>Languages</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <i className="fas fa-calculator"></i> Financial Analysis
+                                            <p className="text-gray-400">Proficient in financial analysis and reporting.</p>
+                                        </td>
+                                        <td>
+                                            <i className="fas fa-users"></i> Teamwork
+                                            <p className="text-gray-400">Excellent team player and collaborator.</p>
+                                        </td>
+                                        <td>
+                                            <i className="fas fa-laptop-code"></i> Microsoft Excel
+                                            <p className="text-gray-400">Advanced proficiency in Microsoft Excel.</p>
+                                        </td>
+                                        <td>
+                                            <i className="fas fa-language"></i> Indonesian
+                                            <p className="text-gray-400">Proficient in Indonesian.</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <i className="fas fa-chart-line"></i> Budgeting
+                                            <p className="text-gray-400">Experienced in budgeting and forecasting.</p>
+                                        </td>
+                                        <td>
+                                            <i className="fas fa-comments"></i> Communication
+                                            <p className="text-gray-400">Strong verbal and written communication skills.</p>
+                                        </td>
+                                        <td>
+                                            <i className="fas fa-database"></i> SQL
+                                            <p className="text-gray-400">Experienced in SQL database management.</p>
+                                        </td>
+                                        <td>
+                                            <i className="fas fa-language"></i> English
+                                            <p className="text-gray-400">Fluent in English.</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <i className="fas fa-hand-holding-usd"></i> Investment Management
+                                            <p className="text-gray-400">Skilled in managing investments and portfolios.</p>
+                                        </td>
+                                        <td>
+                                            <i className="fas fa-lightbulb"></i> Problem Solving
+                                            <p className="text-gray-400">Effective problem solver and critical thinker.</p>
+                                        </td>
+                                        <td>
+                                            <i className="fas fa-chart-pie"></i> Tableau
+                                            <p className="text-gray-400">Skilled in data visualization with Tableau.</p>
+                                        </td>
+                                        <td>
+                                            <i className="fas fa-language"></i> Japanese
+                                            <p className="text-gray-400">Coming soon in Japanese.</p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div id="achievement" className="section achievement-section">
+                        <div className="text-center">
+                            <h2 className="text-4xl font-bold mb-8">Achievements</h2>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                <div className="bg-gray-800 p-6 rounded-lg">
+                                    <h3 className="text-2xl font-bold mb-2">PKM Kemendikbud</h3>
+                                    <p className="text-gray-400">Gacor.</p>
+                                </div>
+                                <div className="bg-gray-800 p-6 rounded-lg">
+                                    <h3 className="text-2xl font-bold mb-2">Toosoon</h3>
+                                    <p className="text-gray-400">99.</p>
+                                </div>
+                                <div className="bg-gray-800 p-6 rounded-lg">
+                                    <h3 className="text-2xl font-bold mb-2">Lorem</h3>
+                                    <p className="text-gray-400">Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button className="floating-button" onClick={() => scrollToSection('home')}>
+                        <i className="fas fa-arrow-up"></i>
+                    </button>
+                    <button className="dark-mode-button" onClick={toggleDarkMode}>
+                        <i className="fas fa-moon"></i>
+                    </button>
+                </div>
+            );
+        }
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+    <div class="silit">
+        <div class="sempak section-project">
+            <h1 class="section__title">Certificates</h1><small class="section__subtitle">
+                An academics and professional certifications</small>
+
+            <div class="project-carousel">
+                <div class="project-strip">
+                    <div class="project"><img src="./sertif/ahpp.png" alt="" /></div>
+                    <div class="project"><img src="./sertif/app.png" alt="" /></div>
+                    <div class="project"><img src="./sertif/da.png" alt="" /></div>
+                    <div class="project"><img src="./sertif/dmp.png" alt="" /></div>
+                    <div class="project"><img src="./sertif/pm.png" alt="" /></div>
+                    <div class="project"><img src="./sertif/spad.png" alt="" /></div>
+                    <div class="project"><img src="./sertif/tofl.png" alt="" /></div>
+                    <div class="project"><img src="./sertif/gatau.png" alt="" /></div>
+                    <div class="project"><img src="./sertif/ham.png" alt="" /></div>
+                    <div class="project"><img src="./sertif/kom.png" alt="" /></div>
+                </div>
+                <div class="project-screen">
+                    <div class="project-detail">
+                        <div class="project "><img src="./sertif/ahpp.png" width="9%" alt="" /></div>
+                        <div class="project"><img src="./sertif/app.png" alt="" /></div>
+                        <div class="project"><img src="./sertif/da.png" alt="" /></div>
+                        <div class="project"><img src="./sertif/dmp.png" alt="" /></div>
+                        <div class="project"><img src="./sertif/pm.png" alt="" /></div>
+                        <div class="project"><img src="./sertif/spad.png" alt="" /></div>
+                        <div class="project"><img src="./sertif/tofl.png" alt="" /></div>
+                        <div class="project"><img src="./sertif/gatau.png" alt="" /></div>
+                        <div class="project"><img src="./sertif/ham.png" alt="" /></div>
+                        <div class="project"><img src="./sertif/kom.png" alt="" /></div>
+                    </div>
+                    <div class="screen-frame"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js'></script>
+    <script src="./sources/begaya.js"></script>
+
+</body>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-logo">
+            <img src="logo.png" height="10px" width="10px" alt="Logo">
+        </div>
+        <div class="footer-menu">
+            <ul>
+                <li><a href="#">All provide</a></li>
+                <li><a href="#">using</a></li>
+                <li><a href="#">AI</a></li>
+            </ul>
+        </div>
+        <div class="footer-social">
+            <ul>
+                <li><a href="#" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2024. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+</html>

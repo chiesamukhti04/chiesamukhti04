@@ -1,0 +1,302 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1a1a1a;
+    color: white;
+    overflow-x: hidden;
+}
+
+.upper-logo {
+    width: 2%;
+}
+
+.highlight {
+    color: #ff007a;
+}
+
+.section {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-section {
+    background-color: #2a2a2a;
+}
+
+.experience-section {
+    background-color: #3a3a3a;
+}
+
+.skills-section {
+    background-color: #4a4a4a;
+}
+
+.achievement-section {
+    background-color: #5a5a5a;
+}
+
+.certificates-section {
+    background-color: #6a6a6a;
+}
+
+.fixed-navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: #1a1a1a;
+}
+
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff007a;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.dark-mode-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #ff007a;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.skills-section>div {
+    border-bottom: 1px solid #ffffff;
+    padding: 20px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ffffff;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #333333;
+}
+
+
+
+@import 'https://fonts.googleapis.com/css?family=Josefin+Slab';
+
+.silit {
+    font-family: "Josefin Slab";
+}
+
+.sempak {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.section-project {
+    padding: 50px 0;
+    position: relative;
+    background-color: #222;
+}
+
+.section__title, .section__subtitle {
+    text-align: center;
+    color: white;
+    display: block;
+}
+
+.section__title {
+    font-size: 3em;
+    line-height: 1;
+    margin: 0 0 20px;
+}
+
+.section__subtitle {
+    font-size: 1.2em;
+    line-height: 1.5;
+    opacity: 0.5;
+}
+
+.section__subtitle a {
+    color: inherit;
+}
+
+.project-carousel {
+    position: relative;
+    padding: 50px 0;
+}
+
+.project-strip {
+    margin: 150px 0 150px;
+    filter: blur(10px);
+}
+
+.project-strip .project {
+    cursor: pointer;
+}
+
+.project-strip img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
+.project-screen {
+    width: 768px;
+    height: 1050px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.project-screen .project-detail {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 578px;
+    height: 361px;
+    margin: 32px auto 0;
+    z-index: 1;
+    background-color: #333;
+}
+
+.project-screen .screen-frame {
+    content: " ";
+    width: 768px;
+    height: 451px;
+    position: absolute;
+    background-image: url("https://dl.dropboxusercontent.com/u/26808427/cdn/experiments/training/macbook-frame.png");
+    background-repeat: no-repeat;
+}
+
+.project-screen .project {
+    margin-right: -100%;
+    float: left;
+    cursor: move;
+}
+
+.serti  {
+    width: 10%;
+}
+
+
+/* footer */
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo {
+    width: 6%;
+}
+
+.footer-logo img {
+    width: 100%;
+    height: auto;
+}
+
+.footer-menu {
+    width: 40%;
+}
+
+.footer-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-menu li {
+    margin-right: 20px;
+}
+
+.footer-menu a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-social {
+    width: 20%;
+}
+
+.footer-social ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-social li {
+    margin-right: 20px;
+}
+
+.footer-social a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-copyright {
+    width: 20%;
+    text-align: center;
+}
+
+.footer-copyright p {
+    margin: 0;
+    padding: 0;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
